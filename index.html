@@ -223,10 +223,7 @@
       .mobile-menu.active {
         transform: translateX(0);
       }
-      .emoji-list li::before {
-        content: "✅";
-        margin-right: 0.5rem;
-      }
+
       /* mask */
       .mask-custom {
         -webkit-mask-image: url("./images/mask.svg");
@@ -380,6 +377,7 @@
       /* Utilities used inline in markup preserved in style for minify */
     </style>
   </head>
+
   <body class="bg-[#0a0e27] text-[#e6e6e6] overflow-x-hidden">
     <!-- Loading Screen -->
     <div id="loader" aria-hidden="true">
@@ -570,7 +568,7 @@
             />
           </div>
         </a>
-        <div class="text-center space-y-2 md:space-y-3 my-8 scroll-fade-in">
+        <div class="text-center space-y-2 md:space-y-3 my-3 scroll-fade-in">
           <h3 class="text-3xl text-[#64ffda]">Dinesh Sowndar</h3>
           <p class="text-xl text-[#79c0ff]">
             Flutter App / Frontend (NextJS) Developer
@@ -580,7 +578,7 @@
           </p>
         </div>
       </div>
-      <p class="scroll-fade-in">
+      <p class="scroll-fade-in mt-5">
         I'm a Mobile App & Frontend Developer with 5+ years of experience,
         specializing in Flutter and React/Next.js. I love building fast,
         responsive, and visually appealing digital experiences that work
@@ -593,22 +591,94 @@
         <h4 class="mt-8 font-semibold text-xl text-white">
           Skills & Expertise:
         </h4>
-        <ul class="emoji-list space-y-2 text-base stagger-animation">
-          <li>Expert in Flutter and React/Next.js</li>
-          <li>Skilled in API integration — REST & GraphQL</li>
-          <li>Experienced with Firebase and Google Cloud Services</li>
-          <li>Strong knowledge of state management (GetX, Provider, BLoC)</li>
-          <li>Familiar with MVC / Clean architecture patterns</li>
-          <li>Hands-on experience in CI/CD (GitHub Actions, Codemagic)</li>
-          <li>
-            Proficient in app publishing and maintenance (Play Store and App
+        <div class="emoji-list space-y-2 text-base stagger-animation">
+          <p>✅ Expert in Flutter and React/Next.js</p>
+          <p>✅ Skilled in API integration — REST & GraphQL</p>
+          <p>✅ Experienced with Firebase and Google Cloud Services</p>
+          <p>✅ Strong knowledge of state management (GetX, Provider, BLoC)</p>
+          <p>✅ Familiar with MVC / Clean architecture patterns</p>
+          <p>✅ Hands-on experience in CI/CD (GitHub Actions, Codemagic)</p>
+          <p>
+            ✅ Proficient in app publishing and maintenance (Play Store and App
             store)
-          </li>
-          <li>
-            Delivered apps in AI, Healthcare, eCommerce, IoT, and SaaS domains
-          </li>
-          <li>Active Open Source Contributor passionate about scalable tech</li>
-        </ul>
+          </p>
+          <p>
+            ✅ Delivered apps in AI, Healthcare, eCommerce, IoT, and SaaS
+            domains
+          </p>
+          <p>
+            ✅ Active Open Source Contributor passionate about scalable tech
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h3
+          class="scroll-fade-in text-2xl mb-10 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-12 after:h-0.5 after:bg-[#64ffda]"
+        >
+          Work Experience
+        </h3>
+
+        <div
+          class="relative border-l border-[#64ffda]/40 pl-8 space-y-12 scroll-fade-in"
+        >
+          <!-- Item 1 -->
+          <div class="relative">
+            <span
+              class="scroll-fade-in absolute -left-[41px] top-2 w-4 h-4 bg-[#64ffda] rounded-full"
+            ></span>
+            <div class="ml-2 scroll-fade-in">
+              <p class="text-xl font-medium text-[#64ffda]">
+                Seven Zero Technologies, UK (Remote)
+              </p>
+              <p class="text-base text-gray-300">
+                Flutter & Frontend Developer
+              </p>
+              <p class="text-sm text-gray-400">Jan 2022 – Present (3 Years)</p>
+            </div>
+          </div>
+
+          <!-- Item 2 -->
+          <div class="relative">
+            <span
+              class="scroll-fade-in absolute -left-[42px] top-2 w-4 h-4 bg-[#64ffda] rounded-full"
+            ></span>
+            <div class="ml-2 scroll-fade-in">
+              <p class="text-xl font-medium text-[#64ffda]">
+                Brine Software Solutions Pvt. Ltd, Chennai
+              </p>
+              <p class="text-base text-gray-300">
+                Hybrid App Developer (Flutter | Ionic)
+              </p>
+              <p class="text-sm text-gray-400">Sep 2019 – Oct 2021 (2 Years)</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-16">
+        <h3
+          class="scroll-fade-in text-2xl mb-10 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-12 after:h-0.5 after:bg-[#64ffda]"
+        >
+          Education
+        </h3>
+
+        <div class="relative pl-8 space-y-12 scroll-fade-in">
+          <div class="relative">
+            <span
+              class="scroll-fade-in absolute -left-[41px] top-2 w-4 h-4 bg-[#64ffda] rounded-full"
+            ></span>
+            <div class="ml-2 scroll-fade-in">
+              <p class="text-xl font-medium text-[#64ffda]">
+                AVS College of Technology, Salem
+              </p>
+              <p class="text-base text-gray-300">
+                B.E — Electrical and Electronics Engineering (EEE)
+              </p>
+              <p class="text-sm text-gray-400">2014 – 2018</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -1020,7 +1090,7 @@
             <a
               href="https://github.com/Dineshsowndar/ai_exam_evaluator"
               target="_blank"
-              class="text-[#64ffda] no-underline flex items-center gap-2 px-16 pt-2"
+              class="text-[#64ffda] no-underline flex items-center gap-2 px-24 md:px-20 pt-2"
               ><img
                 src="images/github.png"
                 class="transition-transform duration-300 hover:scale-110"
@@ -1071,7 +1141,7 @@
             <a
               href="https://github.com/Dinesh-Sowndar/flutter_esp32_rgb_led_controller"
               target="_blank"
-              class="text-[#64ffda] no-underline flex items-center gap-2 px-16 pt-2"
+              class="text-[#64ffda] no-underline flex items-center gap-2 px-24 md:px-20 pt-2"
               ><img
                 src="images/github.png"
                 class="transition-transform duration-300 hover:scale-110"
@@ -1118,7 +1188,7 @@
             <a
               href="https://github.com/Dinesh-Sowndar/flutter_furniture_app_ui_challenge"
               target="_blank"
-              class="text-[#64ffda] no-underline flex items-center gap-2 px-16 pt-2"
+              class="text-[#64ffda] no-underline flex items-center gap-2 px-24 md:px-20 pt-2"
               ><img
                 src="images/github.png"
                 class="transition-transform duration-300 hover:scale-110"
@@ -1428,22 +1498,31 @@
       href="#home"
       id="scrollTop"
       class="fixed bottom-5 right-5 w-12 h-12 bg-[#64ffda] rounded-full flex items-center justify-center text-[#0a0e27] no-underline opacity-0 invisible transition-all duration-300 z-30 hover:bg-[#f06292] hover:-translate-y-1.5"
-      ><i class="fas fa-arrow-up"></i
-    ></a>
+      ><i class="fas fa-arrow-up"></i>
+    </a>
 
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-NXVR9BVPPZ"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
+    <script type="module">
+      // Import the functions you need from the SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.5.0/firebase-analytics.js";
+      // TODO: Add SDKs for Firebase products that you want to use
+      // https://firebase.google.com/docs/web/setup#available-libraries
 
-      gtag("config", "G-NXVR9BVPPZ");
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyCyiPDRQRu8rJMqlpJvLBxHn7Ie78SBX8k",
+        authDomain: "dinesh-sowndar-portfolio.firebaseapp.com",
+        projectId: "dinesh-sowndar-portfolio",
+        storageBucket: "dinesh-sowndar-portfolio.firebasestorage.app",
+        messagingSenderId: "202871303333",
+        appId: "1:202871303333:web:3a547e2e7665a50fc0714c",
+        measurementId: "G-JP2HWSWXXJ",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
     </script>
 
     <script>
