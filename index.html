@@ -1,0 +1,1718 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Dinesh Sowndar - Mobile App / Frontend Developer with 5+ years of experience in Flutter and React/Next.js"
+    />
+    <meta
+      name="keywords"
+      content="Dinesh Sowndar, Flutter Developer, React Developer, Mobile App Developer, Frontend Developer, App Developer, Mobile Application Developer, IoT apps, N8N Automation expert, Android App Developer, iOS App Developer "
+    />
+    <meta name="author" content="Dinesh Sowndar" />
+    <!-- Open Graph -->
+    <meta
+      property="og:title"
+      content="Dinesh Sowndar - Flutter Developer | Mobile App Developer | Frontend Developer"
+    />
+    <meta
+      property="og:description"
+      content="Passionate Frontend Developer with 5+ years of experience building responsive, scalable, and user-centric applications"
+    />
+    <meta
+      property="og:image"
+      content="images/dinesh_sowndar_flutter_developer.jpg"
+    />
+    <meta property="og:url" content="https://dineshsowndar.github.io" />
+    <meta property="og:type" content="website" />
+    <title>
+      Dinesh Sowndar - Flutter Developer | Mobile App Developer | Frontend
+      Developer
+    </title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* Root colors */
+      :root {
+        --bg-primary: #0a0e27;
+        --bg-secondary: #151932;
+        --bg-tertiary: #1e2140;
+        --text-primary: #e6e6e6;
+        --text-secondary: #a0a0a0;
+        --accent-primary: #64ffda;
+        --accent-secondary: #f06292;
+        --code-green: #7ee787;
+        --code-blue: #79c0ff;
+      }
+      /* Base */
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        font-family: ui-monospace, monospace, monospace;
+        background: var(--bg-primary);
+        color: var(--text-primary);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+      /* Cursor */
+      .cursor,
+      .cursor-follower {
+        position: fixed;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        border-radius: 50%;
+        z-index: 9999;
+        mix-blend-mode: difference;
+      }
+      .cursor {
+        width: 20px;
+        height: 20px;
+        border: 2px solid var(--accent-primary);
+        transition: all 0.1s ease;
+      }
+      .cursor-follower {
+        width: 40px;
+        height: 40px;
+        background: rgba(100, 255, 218, 0.1);
+        transition: all 0.25s ease;
+        z-index: 9998;
+      }
+      /* Gradient text */
+      .gradient-text {
+        background: linear-gradient(270deg, #b6e5f2, #7daeeb, #7dcceb);
+        background-size: 600% 600%;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        animation: auroraShift 8s ease infinite;
+      }
+      @keyframes auroraShift {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 100% 50%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+      /* typing cursor */
+      .typing-cursor {
+        display: inline-block;
+        width: 3px;
+        height: 1.5rem;
+        background: var(--code-green);
+        animation: blink 1s steps(2) infinite;
+      }
+      @keyframes blink {
+        0%,
+        50% {
+          opacity: 1;
+        }
+        51%,
+        100% {
+          opacity: 0;
+        }
+      }
+      /* Particles */
+      .particle {
+        position: absolute;
+        background: var(--accent-primary);
+        border-radius: 50%;
+        opacity: 0.3;
+        animation: float 15s linear infinite;
+      }
+      @keyframes float {
+        0% {
+          transform: translateY(100vh) translateX(0);
+        }
+        100% {
+          transform: translateY(-100px) translateX(100px);
+        }
+      }
+      /* Loader */
+      #loader {
+        position: fixed;
+        inset: 0;
+        background: var(--bg-primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 50;
+        transition: opacity 0.5s;
+      }
+      .loader-progress {
+        height: 100%;
+        background: var(--accent-primary);
+        width: 0;
+        animation: loading 2s ease-in-out forwards;
+      }
+      @keyframes loading {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 100%;
+        }
+      }
+      /* Scrollbar */
+      ::-webkit-scrollbar {
+        width: 8px;
+      }
+      ::-webkit-scrollbar-track {
+        background: var(--bg-primary);
+      }
+      ::-webkit-scrollbar-thumb {
+        background: var(--accent-primary);
+        border-radius: 4px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: var(--accent-secondary);
+      }
+      /* Nav hover underline */
+      .nav-link {
+        position: relative;
+      }
+      .nav-link::after {
+        content: "";
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--accent-primary);
+        transition: width 0.3s;
+      }
+      .nav-link:hover::after {
+        width: 100%;
+      }
+      /* Mobile menu */
+      .mobile-menu {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease-in-out;
+      }
+      .mobile-menu.active {
+        transform: translateX(0);
+      }
+      .emoji-list li::before {
+        content: "✅";
+        margin-right: 0.5rem;
+      }
+      /* mask */
+      .mask-custom {
+        -webkit-mask-image: url("./images/mask.svg");
+        mask-image: url("./images/mask.svg");
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: contain;
+        mask-size: contain;
+        -webkit-mask-position: center;
+        mask-position: center;
+      }
+      /* Simple responsive helpers (kept minimal to preserve Tailwind use) */
+      section {
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      /* Scroll Animations */
+      .scroll-fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .scroll-fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .scroll-slide-left {
+        opacity: 0;
+        transform: translateX(-50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .scroll-slide-left.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .scroll-slide-right {
+        opacity: 0;
+        transform: translateX(50px);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .scroll-slide-right.visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .scroll-scale {
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .scroll-scale.visible {
+        opacity: 1;
+        transform: scale(1);
+      }
+
+      .scroll-rotate {
+        opacity: 0;
+        transform: rotate(5deg) scale(0.9);
+        transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+      }
+
+      .scroll-rotate.visible {
+        opacity: 1;
+        transform: rotate(0) scale(1);
+      }
+
+      .stagger-animation > * {
+        opacity: 0;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .stagger-animation.visible > * {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .stagger-animation.visible > *:nth-child(1) {
+        transition-delay: 0.1s;
+        transform: translateY(20px);
+      }
+      .stagger-animation.visible > *:nth-child(2) {
+        transition-delay: 0.2s;
+        transform: translateY(20px);
+      }
+      .stagger-animation.visible > *:nth-child(3) {
+        transition-delay: 0.3s;
+        transform: translateY(20px);
+      }
+      .stagger-animation.visible > *:nth-child(4) {
+        transition-delay: 0.4s;
+        transform: translateY(20px);
+      }
+      .stagger-animation.visible > *:nth-child(5) {
+        transition-delay: 0.5s;
+        transform: translateY(20px);
+      }
+      .stagger-animation.visible > *:nth-child(6) {
+        transition-delay: 0.6s;
+        transform: translateY(20px);
+      }
+      .stagger-animation.visible > *:nth-child(7) {
+        transition-delay: 0.6s;
+        transform: translateY(20px);
+      }
+      .stagger-animation.visible > *:nth-child(8) {
+        transition-delay: 0.6s;
+        transform: translateY(20px);
+      }
+      .stagger-animation.visible > *:nth-child(9) {
+        transition-delay: 0.6s;
+        transform: translateY(20px);
+      }
+
+      /* Project card hover effect */
+      .project-card {
+        overflow: hidden;
+      }
+
+      .project-card img {
+        transition: transform 0.5s ease;
+      }
+
+      .project-card:hover img {
+        transform: scale(1.05);
+      }
+
+      /* Skill item animation */
+      .skill-item {
+        transition: transform 0.3s ease;
+      }
+
+      .skill-item:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Contact item animation */
+      .contact-item {
+        transition: transform 0.3s ease, background-color 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-5px);
+      }
+
+      /* Utilities used inline in markup preserved in style for minify */
+    </style>
+  </head>
+  <body class="bg-[#0a0e27] text-[#e6e6e6] overflow-x-hidden">
+    <!-- Loading Screen -->
+    <div id="loader" aria-hidden="true">
+      <div class="text-center">
+        <div class="text-2xl text-[#64ffda] mb-4">Initializing...</div>
+        <div class="w-48 h-1 bg-[#1e2140] rounded overflow-hidden">
+          <div class="loader-progress h-full"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" aria-hidden="true"></div>
+    <div class="cursor-follower" aria-hidden="true"></div>
+
+    <!-- Header -->
+    <header
+      id="header"
+      class="fixed top-0 w-full bg-[rgba(10,14,39,0.9)] backdrop-blur-md z-40 transition-all duration-300"
+    >
+      <nav
+        class="flex justify-between items-center py-4 px-5 md:px-10 lg:px-20 max-w-7xl mx-auto"
+      >
+        <a
+          href="#"
+          class="text-2xl font-bold text-[#64ffda] no-underline relative overflow-hidden"
+          >&lt;/Dinesh&gt;<span
+            class="absolute bottom-0 left-0 w-0 h-0.5 bg-[#64ffda] transition-all duration-300"
+          ></span
+        ></a>
+        <!-- Desktop Navigation -->
+        <ul class="hidden md:flex list-none">
+          <li class="ml-8">
+            <a
+              href="#home"
+              class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]"
+              >Home</a
+            >
+          </li>
+          <li class="ml-8">
+            <a
+              href="#about"
+              class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]"
+              >About</a
+            >
+          </li>
+          <li class="ml-8">
+            <a
+              href="#projects"
+              class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]"
+              >Projects</a
+            >
+          </li>
+          <li class="ml-8">
+            <a
+              href="#skills"
+              class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]"
+              >Skills</a
+            >
+          </li>
+          <li class="ml-8">
+            <a
+              href="#contact"
+              class="nav-link text-[#e6e6e6] no-underline transition-colors duration-300 hover:text-[#64ffda]"
+              >Contact</a
+            >
+          </li>
+        </ul>
+        <!-- Mobile Menu Toggle -->
+        <button
+          id="menuToggle"
+          class="bg-transparent border-none text-[#e6e6e6] text-2xl cursor-pointer md:hidden"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+      </nav>
+    </header>
+
+    <!-- Mobile Navigation Menu -->
+    <div
+      id="mobileMenu"
+      class="mobile-menu fixed top-0 left-0 w-64 h-full bg-[#151932] z-50 md:hidden"
+      aria-hidden="true"
+    >
+      <div class="p-4">
+        <div class="flex justify-between items-center mb-8">
+          <a href="#" class="text-2xl font-bold text-[#64ffda] no-underline"
+            >&lt;/Dinesh&gt;</a
+          >
+          <button
+            id="closeMenu"
+            class="bg-transparent border-none text-[#e6e6e6] text-2xl cursor-pointer"
+          >
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <ul class="list-none">
+          <li class="mb-6">
+            <a
+              href="#home"
+              class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"
+              ><i class="fas fa-home mr-3"></i> Home</a
+            >
+          </li>
+          <li class="mb-6">
+            <a
+              href="#about"
+              class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"
+              ><i class="fas fa-user mr-3"></i> About</a
+            >
+          </li>
+          <li class="mb-6">
+            <a
+              href="#projects"
+              class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"
+              ><i class="fas fa-briefcase mr-3"></i> Projects</a
+            >
+          </li>
+          <li class="mb-6">
+            <a
+              href="#skills"
+              class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"
+              ><i class="fas fa-cogs mr-3"></i> Skills</a
+            >
+          </li>
+          <li class="mb-6">
+            <a
+              href="#contact"
+              class="text-[#e6e6e6] no-underline text-lg transition-colors duration-300 hover:text-[#64ffda] block"
+              ><i class="fas fa-envelope mr-3"></i> Contact</a
+            >
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Overlay for mobile menu -->
+    <div
+      id="overlay"
+      class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden md:hidden"
+      aria-hidden="true"
+    ></div>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="h-screen flex items-center justify-center relative overflow-hidden"
+    >
+      <div
+        id="particles"
+        class="absolute top-0 left-0 w-full h-full overflow-hidden z-10"
+        aria-hidden="true"
+      ></div>
+      <div class="text-center z-20 max-w-4xl px-3">
+        <h1
+          class="w-full text-5xl md:text-7xl mb-4 gradient-text font-bold md:font-medium tracking-tighter md:tracking-tight"
+        >
+          Dinesh Sowndar
+        </h1>
+        <div class="text-2xl md:text-3xl mb-8 text-[#7ee787]">
+          <span id="typingText"></span
+          ><span class="typing-cursor" aria-hidden="true"></span>
+        </div>
+        <div class="flex justify-center mt-8">
+          <a
+            href="files/Dineshkumar_flutter_react_resume.pdf"
+            target="_blank"
+            class="px-4 md:px-6 py-2 md:py-3 border-2 border-[#64ffda] bg-transparent text-[#64ffda] no-underline rounded text-base md:text-lg transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27]"
+            >View Resume</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-10 px-5 md:px-10 lg:px-20 max-w-7xl mx-auto">
+      <h2
+        class="text-4xl mb-8 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-12 after:h-0.5 after:bg-[#64ffda] scroll-fade-in"
+      >
+        About Me
+      </h2>
+      <div class="flex flex-col w-full items-center justify-center">
+        <a href="images/dinesh_sowndar_flutter_developer.jpg" target="_blank">
+          <div class="relative w-96 p-5 scroll-scale">
+            <img
+              src="images/dinesh_sowndar_flutter_developer.jpg"
+              alt="Dinesh Sowndar"
+              class="w-full h-auto object-cover mask-custom"
+            />
+          </div>
+        </a>
+        <div class="text-center space-y-2 md:space-y-3 my-8 scroll-fade-in">
+          <h3 class="text-3xl text-[#64ffda]">Dinesh Sowndar</h3>
+          <p class="text-xl text-[#79c0ff]">
+            Flutter App / Frontend (NextJS) Developer
+          </p>
+          <p class="text-xl text-[#f06292]">
+            <i class="fa-solid fa-location-dot"></i> Chennai, India
+          </p>
+        </div>
+      </div>
+      <p class="scroll-fade-in">
+        I'm a Mobile App & Frontend Developer with 5+ years of experience,
+        specializing in Flutter and React/Next.js. I love building fast,
+        responsive, and visually appealing digital experiences that work
+        flawlessly across devices. Passionate about writing clean, maintainable
+        code and staying updated with the latest technologies, I focus on
+        creating user-centric products that blend performance, design, and
+        scalability to deliver seamless cross-platform experiences.
+      </p>
+      <div class="scroll-fade-in">
+        <h4 class="mt-8 font-semibold text-xl text-white">
+          Skills & Expertise:
+        </h4>
+        <ul class="emoji-list space-y-2 text-base stagger-animation">
+          <li>Expert in Flutter and React/Next.js</li>
+          <li>Skilled in API integration — REST & GraphQL</li>
+          <li>Experienced with Firebase and Google Cloud Services</li>
+          <li>Strong knowledge of state management (GetX, Provider, BLoC)</li>
+          <li>Familiar with MVC / Clean architecture patterns</li>
+          <li>Hands-on experience in CI/CD (GitHub Actions, Codemagic)</li>
+          <li>Proficient in app publishing and maintenance (Play Store and App store)</li>
+          <li>Delivered apps in AI, Healthcare, eCommerce, IoT, and SaaS domains</li>
+          <li>Active Open Source Contributor passionate about scalable tech</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section
+      id="projects"
+      class="py-10 px-5 md:px-10 lg:px-20 max-w-7xl mx-auto"
+    >
+      <h2
+        class="text-4xl mb-8 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-12 after:h-0.5 after:bg-[#64ffda] scroll-fade-in"
+      >
+        Projects
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8">
+        <!-- Project cards (kept content identical) -->
+        <div
+          class="bg-[#151932] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/my-clinicos.jpg"
+              alt="My ClinicOS"
+              class="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">My ClinicOS</h3>
+            <p class="text-[#a0a0a0]">
+              AI-powered healthcare platform automating patient calls,
+              scheduling, and follow-ups through intelligent voice agents.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Flutter</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Hasura</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >AI Agent</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >LiveKit</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Voice Call</span
+              >
+            </div>
+            <div class="grid grid-cols-2 gap-4 p-1 pt-1">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.myclinicos.app"
+                target="_blank"
+                class="text-[#64ffda] no-underline flex items-center gap-2"
+                ><img
+                  src="images/play-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+              <a
+                href="https://apps.apple.com/us/app/my-clinicos/id6737430837"
+                target="_blank"
+                class="text-[#64ffda] no-underline flex items-center gap-2 transition-colors duration-300 hover:text-[#f06292]"
+                ><img
+                  src="images/app-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Repeated other projects preserved (LOKL Business, Bluebee Care, LOKL Rider, My ClinicOS - Web, Arokiya) -->
+        <!-- For brevity in this reply the markup is kept identical to original for each card. -->
+        <div
+          class="bg-[#151932] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/lokl-business.jpg"
+              alt="LOKL Bus"
+              class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">LOKL Business</h3>
+            <p class="text-[#a0a0a0]">
+              A commission-free delivery app empowering local merchants with
+              real-time orders and customer management.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Flutter</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Graphql</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Firebase</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Chat</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >GetX</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Stripe Payment</span
+              >
+            </div>
+            <div class="grid grid-cols-2 gap-4 p-1 pt-1">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.lokl.app"
+                target="_blank"
+                ><img
+                  src="images/play-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+              <a
+                href="https://apps.apple.com/us/app/lokl-business/id1590345180"
+                target="_blank"
+                ><img
+                  src="images/app-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#151932] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/bluebee-care.jpg"
+              alt="Bluebee Care"
+              class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">Bluebee Care</h3>
+            <p class="text-[#a0a0a0]">
+              Job booking app for healthcare workers offering instant payments,
+              flexible shifts, and real-time alerts.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Flutter</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Graphql</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Firebase</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Codemagic</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Payment Gateway</span
+              >
+            </div>
+            <div class="grid grid-cols-2 gap-4 p-1 pt-1">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.bluebeecare.app"
+                target="_blank"
+                ><img
+                  src="images/play-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+              <a
+                href="https://apps.apple.com/cd/app/bluebee-care/id1644848151"
+                target="_blank"
+                ><img
+                  src="images/app-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#151932] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/lokl-rider.jpg"
+              alt="LOKL Rider"
+              class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">LOKL Rider</h3>
+            <p class="text-[#a0a0a0]">
+              Rider-focused delivery app enabling flexible shifts, real-time
+              tracking, and efficient delivery management.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Flutter</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Graphql</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >CI/CD</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Google Maps</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Location Tracking</span
+              >
+            </div>
+            <div class="grid grid-cols-2 gap-4 p-1 pt-1">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.loklrider.app"
+                target="_blank"
+                ><img
+                  src="images/play-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+              <a
+                href="https://apps.apple.com/us/app/lokl-rider/id1592667069?platform=iphone"
+                target="_blank"
+                ><img
+                  src="images/app-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#151932] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/my-clinicos.jpg"
+              alt="My ClinicOS"
+              class="w-full h-full object-cover object-right transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">My ClinicOS - Web</h3>
+            <p class="text-[#a0a0a0]">
+              AI-driven web app streamlining clinic communication, appointment
+              management, and patient engagement.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >NextJS</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Dashboard</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Tailwind Css</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >AI Analytics</span
+              >
+            </div>
+            <div class="grid grid-cols-1 gap-4 pt-1">
+              <a
+                href="https://myclinicos.com/"
+                target="_blank"
+                class="text-[#64ffda] w-full no-underline flex items-center gap-2 transition-colors duration-300 hover:text-[#f06292]"
+              >
+                <button
+                  class="w-full border border-gray-400 flex justify-center gap-3 p-2.5 items-center bg-black/35 text-white px-5 rounded-lg shadow-md transition-transform duration-300 hover:scale-110"
+                >
+                  <i class="fas fa-external-link-alt text-sm"></i
+                  ><span class="font-semibold uppercase tracking-wide text-sm"
+                    >Visit Site</span
+                  >
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#151932] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/arokiya.jpg"
+              alt="Arokiya"
+              class="w-full h-full object-cover object-center transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">Arokiya</h3>
+            <p class="text-[#a0a0a0]">
+              UK-based supermarket app offering 20,000+ daily essentials with
+              seamless shopping and fast delivery.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Flutter</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Deep Linking</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Firebase</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Payment Gateway</span
+              >
+            </div>
+            <div class="grid grid-cols-2 gap-4 p-1 pt-1">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.arokiya.android.app&hl=en"
+                target="_blank"
+                ><img
+                  src="images/play-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+              <a
+                href="https://apps.apple.com/us/app/arokiya/id1529398160"
+                target="_blank"
+                ><img
+                  src="images/app-store.png"
+                  class="transition-transform duration-300 hover:scale-110"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      id="open_source_projects"
+      class="py-10 px-5 md:px-10 lg:px-20 max-w-7xl mx-auto"
+    >
+      <h2
+        class="text-4xl mb-12 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-12 after:h-0.5 after:bg-[#64ffda] scroll-fade-in"
+      >
+        Open Source Projects
+      </h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div
+          class="bg-[#151932] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/ai_exam_evaluator.jpeg"
+              alt="AI Exam Evaluator"
+              class="w-full h-full object-cover object-top transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">AI Exam Evaluator</h3>
+            <p class="text-[#a0a0a0]">
+              AI-powered Flutter app for grading answer sheets from photos using
+              n8n and Gemini AI backend.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Flutter</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >N8N</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Gemini AI</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >AI/ML</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Image Processing</span
+              >
+            </div>
+            <a
+              href="https://github.com/Dineshsowndar/ai_exam_evaluator"
+              target="_blank"
+              class="text-[#64ffda] no-underline flex items-center gap-2 px-16 pt-2"
+              ><img
+                src="images/github.png"
+                class="transition-transform duration-300 hover:scale-110"
+            /></a>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#151932] h-full flex flex-col rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/flutter_esp32_rgb_led_controller.jpeg"
+              alt="Flutter ESP32 RGB LED Controller"
+              class="w-full object-cover object-top transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">
+              Flutter ESP32 RGB LED Controller
+            </h3>
+            <p class="text-[#a0a0a0]">
+              IoT Flutter app controlling RGB LEDs via Bluetooth with real-time
+              effects and ESP32 hardware.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5 h-fit">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Flutter</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >IoT</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Bluetooth</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Arduino</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >ESP32</span
+              >
+            </div>
+            <a
+              href="https://github.com/Dinesh-Sowndar/flutter_esp32_rgb_led_controller"
+              target="_blank"
+              class="text-[#64ffda] no-underline flex items-center gap-2 px-16 pt-2"
+              ><img
+                src="images/github.png"
+                class="transition-transform duration-300 hover:scale-110"
+            /></a>
+          </div>
+        </div>
+
+        <div
+          class="bg-[#151932] rounded-lg overflow-hidden transition-all duration-300 hover:transform hover:-translate-y-2.5 hover:shadow-lg hover:shadow-[rgba(100,255,218,0.2)] project-card scroll-scale"
+        >
+          <div class="h-60 overflow-hidden">
+            <img
+              src="images/flutter_furniture_app_ui_challenge.jpeg"
+              alt="Flutter Furniture App UI Challenge"
+              class="w-full h-full object-cover object-bottom transition-transform duration-300 hover:scale-110"
+            />
+          </div>
+          <div class="p-6">
+            <h3 class="text-xl mb-2 text-[#64ffda]">
+              Flutter Furniture App UI Challenge
+            </h3>
+            <p class="text-[#a0a0a0]">
+              Elegant Flutter UI demo showcasing advanced animations,
+              transitions, and responsive design.
+            </p>
+            <div class="flex flex-wrap gap-3 my-5">
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Flutter</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >UI/UX</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >Animation</span
+              >
+              <span
+                class="bg-[#79c0ff] text-black px-3 py-1 rounded-full text-sm"
+                >App Design</span
+              >
+            </div>
+            <a
+              href="https://github.com/Dinesh-Sowndar/flutter_furniture_app_ui_challenge"
+              target="_blank"
+              class="text-[#64ffda] no-underline flex items-center gap-2 px-16 pt-2"
+              ><img
+                src="images/github.png"
+                class="transition-transform duration-300 hover:scale-110"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center space-y-2 scroll-fade-in">
+        <p class="text-center pt-10 text-lg font-medium">
+          Explore more open-source projects on
+        </p>
+        <a
+          href="https://github.com/Dinesh-Sowndar/"
+          class="text-[#64ffda] text-xl inline-block text-center transform transition-transform duration-200 hover:scale-110"
+          target="_blank"
+          ><i class="fab fa-github mr-2"></i>GitHub</a
+        >
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-10 px-5 md:px-10 lg:px-20 max-w-7xl mx-auto">
+      <h2
+        class="text-4xl mb-8 relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-12 after:h-0.5 after:bg-[#64ffda] scroll-fade-in"
+      >
+        Skills
+      </h2>
+      <div class="space-y-8 text-center">
+        <div class="bg-[#151932] rounded-lg p-10 scroll-scale">
+          <h3 class="text-2xl mb-4 text-[#64ffda]">📱 Mobile & Frontend</h3>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-0 md:gap-5 mt-6"
+          >
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 text-lg skill-item"
+            >
+              <img
+                src="images/flutter-icon.jpg"
+                class="w-20 h-20 object-contain"
+              />Flutter
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/react-js-icon.jpg"
+                class="w-20 h-20 object-contain"
+              />ReactJS
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/nextjs-icon.jpg"
+                class="w-20 h-20 object-contain"
+              />NextJS
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/tailwind-css-icon.jpg"
+                class="w-20 h-20 object-contain"
+              />Tailwind CSS
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#151932] rounded-lg p-10 scroll-scale">
+          <h3 class="text-2xl mb-4 text-[#64ffda]">⚙️ Backend & APIs</h3>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-6"
+          >
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 text-lg skill-item"
+            >
+              <img
+                src="images/firebase-icon.png"
+                class="w-20 h-20 object-contain"
+              />Firebse
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/rest-api.png"
+                class="w-20 h-20 object-contain"
+              />REST Api
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/graphql-icon.png"
+                class="w-20 h-20 object-contain"
+              />Graphql
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/n8n-icon.png"
+                class="w-20 h-20 object-contain"
+              />N8N
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-[#151932] rounded-lg p-10 scroll-scale">
+          <h3 class="text-2xl  mb-4 text-[#64ffda]">🧠 Tools</h3>
+          <div
+            class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-5 mt-6"
+          >
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 text-lg skill-item"
+            >
+              <img
+                src="images/git-icon.jpg"
+                class="w-20 h-20 object-contain"
+              />Git
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/codemagic.png"
+                class="w-20 h-20 object-contain"
+              />Codemagic
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/livekit-icon.png"
+                class="w-20 h-20 object-contain"
+              />LiveKit
+            </div>
+            <div
+              class="flex flex-col items-center gap-5 p-5 transition-transform duration-300 hover:-translate-y-1.5 skill-item"
+            >
+              <img
+                src="images/arduino-icon.png"
+                class="w-20 h-20 object-contain rounded-full"
+              />Arduino/ESP32
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section
+      id="contact"
+      class="py-10 px-5 md:px-10 lg:px-20 max-w-7xl mx-auto"
+    >
+      <h2
+        class="text-4xl relative inline-block after:content-[''] after:absolute after:bottom-[-10px] after:left-0 after:w-12 after:h-0.5 after:bg-[#64ffda] scroll-fade-in"
+      >
+        Contact
+      </h2>
+      <div
+        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12 overflow-hidden scroll-fade-in"
+      >
+        <!-- Call -->
+        <a
+          href="tel:+917010674588"
+          class="bg-[#151932] rounded-lg p-6 flex items-center gap-4 transition-transform duration-300 hover:-translate-y-1.5 hover:bg-[#1e2140] group contact-item"
+        >
+          <div
+            class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300"
+          >
+            <i class="fas fa-phone"></i>
+          </div>
+          <div class="w-4/5">
+            <h4 class="text-[#64ffda] mb-1">Call</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">
+              +91 70106 74588
+            </p>
+          </div>
+        </a>
+        <!-- Email -->
+        <a
+          href="mailto:dineshsowndar@gmail.com"
+          class="bg-[#151932] rounded-lg p-6 flex items-center gap-4 transition-transform duration-300 hover:-translate-y-1.5 hover:bg-[#1e2140] group contact-item"
+        >
+          <div
+            class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300"
+          >
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="w-4/5">
+            <h4 class="text-[#64ffda] mb-1">Email</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">
+              dineshsowndar@gmail.com
+            </p>
+          </div>
+        </a>
+        <!-- WhatsApp -->
+        <a
+          href="https://wa.me/917010674588"
+          target="_blank"
+          class="bg-[#151932] rounded-lg p-6 flex items-center gap-4 transition-transform duration-300 hover:-translate-y-1.5 hover:bg-[#1e2140] group contact-item"
+        >
+          <div
+            class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300"
+          >
+            <i class="fab fa-whatsapp"></i>
+          </div>
+          <div class="w-4/5">
+            <h4 class="text-[#64ffda] mb-1">WhatsApp</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">
+              +91 7010674588
+            </p>
+          </div>
+        </a>
+        <!-- LinkedIn -->
+        <a
+          href="https://linkedin.com/in/dineshsowndar"
+          target="_blank"
+          class="bg-[#151932] rounded-lg p-6 flex items-center gap-4 transition-transform duration-300 hover:-translate-y-1.5 hover:bg-[#1e2140] overflow-hidden group contact-item"
+        >
+          <div
+            class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300"
+          >
+            <i class="fab fa-linkedin"></i>
+          </div>
+          <div class="w-4/5">
+            <h4 class="text-[#64ffda] mb-1">LinkedIn</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">
+              linkedin.com/in/dineshsowndar
+            </p>
+          </div>
+        </a>
+        <!-- GitHub -->
+        <a
+          href="https://github.com/Dinesh-Sowndar"
+          target="_blank"
+          class="bg-[#151932] rounded-lg p-6 flex items-center gap-4 transition-transform duration-300 hover:-translate-y-1.5 hover:bg-[#1e2140] group contact-item"
+        >
+          <div
+            class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300"
+          >
+            <i class="fab fa-github"></i>
+          </div>
+          <div class="w-4/5">
+            <h4 class="text-[#64ffda] mb-1">GitHub</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">
+              github.com/Dinesh-Sowndar
+            </p>
+          </div>
+        </a>
+        <!-- Instagram -->
+        <a
+          href="https://instagram.com/flutter_apps.dart"
+          target="_blank"
+          class="bg-[#151932] rounded-lg p-6 flex items-center gap-4 transition-transform duration-300 hover:-translate-y-1.5 hover:bg-[#1e2140] group contact-item"
+        >
+          <div
+            class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#64ffda] text-xl group-hover:bg-[#64ffda] group-hover:text-[#151932] transition-colors duration-300"
+          >
+            <i class="fab fa-instagram"></i>
+          </div>
+          <div class="w-4/5">
+            <h4 class="text-[#64ffda] mb-1">Instagram</h4>
+            <p class="text-[#a0a0a0] group-hover:text-[#64ffda]">
+              instagram.com/flutter_apps.dart
+            </p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#151932] py-8 px-5 md:px-10 lg:px-20 text-center">
+      <div class="flex justify-center gap-4 mb-4 fa-lg">
+        <a
+          href="https://github.com/Dinesh-Sowndar"
+          class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#e6e6e6] no-underline transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27] hover:-translate-y-1.5"
+          target="_blank"
+          ><i class="fab fa-github"></i
+        ></a>
+        <a
+          href="https://linkedin.com/in/dineshsowndar"
+          class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#e6e6e6] no-underline transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27] hover:-translate-y-1.5"
+          target="_blank"
+          ><i class="fab fa-linkedin "></i
+        ></a>
+        <a
+          href="https://instagram.com/flutter_apps.dart"
+          class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#e6e6e6] no-underline transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27] hover:-translate-y-1.5"
+          target="_blank"
+          ><i class="fab fa-instagram"></i
+        ></a>
+        <a
+          href="https://wa.me/917010674588"
+          class="w-12 h-12 bg-[#1e2140] rounded-full flex items-center justify-center text-[#e6e6e6] no-underline transition-all duration-300 hover:bg-[#64ffda] hover:text-[#0a0e27] hover:-translate-y-1.5"
+          target="_blank"
+          ><i class="fab fa-whatsapp"></i
+        ></a>
+      </div>
+      <p>&copy; 2025 Dinesh Sowndar. All rights reserved.</p>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <a
+      href="#home"
+      id="scrollTop"
+      class="fixed bottom-5 right-5 w-12 h-12 bg-[#64ffda] rounded-full flex items-center justify-center text-[#0a0e27] no-underline opacity-0 invisible transition-all duration-300 z-30 hover:bg-[#f06292] hover:-translate-y-1.5"
+      ><i class="fas fa-arrow-up"></i
+    ></a>
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-NXVR9BVPPZ"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-NXVR9BVPPZ");
+    </script>
+
+    <script>
+      /* ===== Pure JS Scroll Animations + UI behaviors (self-contained) ===== */
+
+      /* ---- Inject required CSS (no external edits needed) ---- */
+      (function injectAnimationCSS() {
+        const css = `
+    /* Scroll animation CSS injected by script */
+    .scroll-fade{opacity:0;transform:translateY(40px);transition:transform 0.9s cubic-bezier(.2,.8,.2,1),opacity 0.9s cubic-bezier(.2,.8,.2,1);will-change:opacity,transform}
+    .scroll-visible{opacity:1;transform:translateY(0)}
+    .project-animate{opacity:0;transform:scale(0.97) translateY(30px);transition:transform 1s cubic-bezier(.2,.8,.2,1),opacity 1s cubic-bezier(.2,.8,.2,1);will-change:opacity,transform}
+    .project-visible{opacity:1;transform:scale(1) translateY(0)}
+    /* Optional: smoother scroll for anchors */
+    html{scroll-behavior:smooth}
+  `;
+        const s = document.createElement("style");
+        s.setAttribute("data-generated-by", "pure-js-anim");
+        s.appendChild(document.createTextNode(css));
+        document.head.appendChild(s);
+      })();
+
+      /* ---- Helpers ---- */
+      const $ = (s) => document.querySelector(s);
+      const $$ = (s) => Array.from(document.querySelectorAll(s));
+
+      /* ---- Cache DOM ---- */
+      const loader = $("#loader"),
+        cursor = document.querySelector(".cursor"),
+        follower = document.querySelector(".cursor-follower"),
+        menuToggle = $("#menuToggle"),
+        mobileMenu = $("#mobileMenu"),
+        closeMenuBtn = $("#closeMenu"),
+        overlay = $("#overlay"),
+        scrollTopBtn = $("#scrollTop"),
+        header = $("#header"),
+        typingText = $("#typingText"),
+        particlesWrap = $("#particles");
+
+      /* ===== Loader (bulletproof) ===== */
+      function hideLoader() {
+        if (!loader) return;
+        loader.style.transition = "opacity 0.5s ease";
+        loader.style.opacity = "0";
+        setTimeout(() => {
+          loader.style.display = "none";
+        }, 650);
+      }
+      if (document.readyState === "complete") hideLoader();
+      else window.addEventListener("load", hideLoader);
+      setTimeout(hideLoader, 3500); // safety fallback
+
+      /* ===== Custom Cursor ===== */
+      if (cursor && follower) {
+        document.addEventListener("mousemove", (e) => {
+          cursor.style.left = e.clientX + "px";
+          cursor.style.top = e.clientY + "px";
+          // follower slightly delayed for smooth trailing
+          requestAnimationFrame(() => {
+            follower.style.left = e.clientX + "px";
+            follower.style.top = e.clientY + "px";
+          });
+        });
+        ["mousedown", "mouseup"].forEach((evt) =>
+          document.addEventListener(evt, (e) => {
+            const scale = evt === "mousedown" ? "scale(0.85)" : "scale(1)";
+            cursor.style.transform = `translate(-50%,-50%) ${scale}`;
+            follower.style.transform = `translate(-50%,-50%) ${scale}`;
+          })
+        );
+      }
+
+      /* ===== Mobile Menu ===== */
+      function openMenu() {
+        if (mobileMenu) {
+          mobileMenu.classList.add("active");
+          overlay && overlay.classList.remove("hidden");
+          document.body.style.overflow = "hidden";
+        }
+      }
+      function closeMenu() {
+        if (mobileMenu) {
+          mobileMenu.classList.remove("active");
+          overlay && overlay.classList.add("hidden");
+          document.body.style.overflow = "auto";
+        }
+      }
+      menuToggle?.addEventListener("click", openMenu);
+      closeMenuBtn?.addEventListener("click", closeMenu);
+      overlay?.addEventListener("click", closeMenu);
+      $$("#mobileMenu a").forEach((a) =>
+        a.addEventListener("click", closeMenu)
+      );
+
+      /* ===== Typing effect (unchanged behavior) ===== */
+      if (typingText) {
+        const texts = [
+          "Mobile App Developer",
+          "Flutter Developer",
+          "Frontend Developer",
+          "NextJS Developer",
+          "N8N Automation",
+          "IoT App Developer",
+        ];
+        let ti = 0,
+          ci = 0,
+          isDeleting = false;
+        (function typeLoop() {
+          const cur = texts[ti];
+          typingText.textContent = isDeleting
+            ? cur.substring(0, --ci)
+            : cur.substring(0, ++ci);
+          if (!isDeleting && ci === cur.length) {
+            isDeleting = true;
+            setTimeout(typeLoop, 2000);
+          } else if (isDeleting && ci === 0) {
+            isDeleting = false;
+            ti = (ti + 1) % texts.length;
+            setTimeout(typeLoop, 500);
+          } else setTimeout(typeLoop, isDeleting ? 50 : 100);
+        })();
+      }
+
+      /* ===== Particles (generate once) ===== */
+      (function genParticles() {
+        if (!particlesWrap) return;
+        const count = 50;
+        for (let i = 0; i < count; i++) {
+          const p = document.createElement("div");
+          p.className = "particle";
+          const size = Math.random() * 5 + 1;
+          Object.assign(p.style, {
+            width: `${size}px`,
+            height: `${size}px`,
+            left: `${Math.random() * 100}%`,
+            top: `${Math.random() * 100}%`,
+            animationDelay: `${Math.random() * 10}s`,
+            position: "absolute",
+            background:
+              getComputedStyle(document.documentElement).getPropertyValue(
+                "--accent-primary"
+              ) || "#64ffda",
+            borderRadius: "50%",
+            opacity: "0.25",
+            pointerEvents: "none",
+          });
+          particlesWrap.appendChild(p);
+        }
+      })();
+
+      /* ===== Header shrink + scrollTop visibility ===== */
+      window.addEventListener("scroll", () => {
+        if (!header) return;
+        if (window.scrollY > 100) {
+          header.style.padding = "0.5rem 5%";
+          header.style.backgroundColor = "rgba(10,14,39,0.95)";
+        } else {
+          header.style.padding = "1rem 5%";
+          header.style.backgroundColor = "rgba(10,14,39,0.9)";
+        }
+        if (scrollTopBtn) {
+          if (window.scrollY > 400) {
+            scrollTopBtn.classList.add("opacity-100", "visible");
+            scrollTopBtn.classList.remove("opacity-0", "invisible");
+          } else {
+            scrollTopBtn.classList.remove("opacity-100", "visible");
+            scrollTopBtn.classList.add("opacity-0", "invisible");
+          }
+        }
+      });
+
+      /* ===== Smooth anchor scroll (keeps offset for header) ===== */
+      $$('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", function (e) {
+          const target = this.getAttribute("href");
+          if (!target || target === "#") return;
+          const el = document.querySelector(target);
+          if (!el) return;
+          e.preventDefault();
+          const top = el.getBoundingClientRect().top + window.pageYOffset - 70;
+          window.scrollTo({ top, behavior: "smooth" });
+        });
+      });
+
+      /* ===== Pure JS Scroll Animations (sections + project cards) ===== */
+
+      /* utility: safely select project cards inside #projects
+   original markup uses classes like 'bg-[#151932] rounded-lg ...' - use the .rounded-lg inside #projects */
+      const projectCards = (() => {
+        const parent = $("#projects");
+        if (!parent) return [];
+        return Array.from(parent.querySelectorAll(".rounded-lg"));
+      })();
+
+      const sections = Array.from(document.querySelectorAll("section"));
+
+      /* add initial classes (hidden states injected via CSS above) */
+      sections.forEach((s) => s.classList.add("scroll-fade"));
+      projectCards.forEach((c) => c.classList.add("project-animate"));
+
+      /* IntersectionObserver for sections (slide-up fade) */
+      const sectionObserver = new IntersectionObserver(
+        (entries, obs) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const el = entry.target;
+              // Add visible class & unobserve for one-time animation
+              el.classList.add("scroll-visible");
+              obs.unobserve(el);
+            }
+          });
+        },
+        { threshold: 0.08, rootMargin: "0px 0px -40px 0px" }
+      );
+
+      sections.forEach((s) => sectionObserver.observe(s));
+
+      /* IntersectionObserver for project cards with stagger logic */
+      const cardObserver = new IntersectionObserver(
+        (entries, obs) => {
+          const visibleEntries = entries
+            .filter((en) => en.isIntersecting && !en.target.dataset.animated)
+            .sort(
+              (a, b) =>
+                projectCards.indexOf(a.target) - projectCards.indexOf(b.target)
+            );
+
+          visibleEntries.forEach((entry, idx) => {
+            const el = entry.target;
+            const delay = idx * 100; // slightly faster stagger
+            setTimeout(() => {
+              el.classList.add("project-visible");
+              el.dataset.animated = "true";
+              obs.unobserve(el);
+            }, delay);
+          });
+        },
+        {
+          threshold: 0.02, // triggers earlier
+          rootMargin: "150px 0px -50px 0px", // starts animation before card is in full view
+        }
+      );
+
+      projectCards.forEach((c) => cardObserver.observe(c));
+
+      /* ===== Additional Scroll Animations ===== */
+
+      // Get all elements with scroll animation classes
+      const scrollElements = document.querySelectorAll(
+        ".scroll-fade-in, .scroll-slide-left, .scroll-slide-right, .scroll-scale, .scroll-rotate, .stagger-animation"
+      );
+
+      // Intersection Observer for scroll animations
+      const elementInView = (el, dividend = 1) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+          elementTop <=
+          (window.innerHeight || document.documentElement.clientHeight) /
+            dividend
+        );
+      };
+
+      const displayScrollElement = (element) => {
+        element.classList.add("visible");
+      };
+
+      const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+          if (elementInView(el, 1.25)) {
+            displayScrollElement(el);
+          }
+        });
+      };
+
+      // Initialize animations on scroll
+      window.addEventListener("scroll", () => {
+        handleScrollAnimation();
+      });
+
+      // Initial check for elements in view on page load
+      window.addEventListener("load", () => {
+        handleScrollAnimation();
+      });
+
+      // Stagger animation for list items
+      const staggerElements = document.querySelectorAll(".stagger-animation");
+      staggerElements.forEach((element) => {
+        const items = element.children;
+        Array.from(items).forEach((item, index) => {
+          item.style.transitionDelay = `${index * 0.1}s`;
+        });
+      });
+
+      /* ===== End of Script ===== */
+    </script>
+  </body>
+</html>
