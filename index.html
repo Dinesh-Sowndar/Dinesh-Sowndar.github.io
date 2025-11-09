@@ -374,6 +374,31 @@
         transform: translateY(-5px);
       }
 
+      .circle {
+        background: plum;
+       
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+        overflow: hidden;
+        animation: morph 10s linear infinite;
+      }
+
+      .circle img {
+        width: 100%;
+      }
+
+      @keyframes morph {
+        0%,
+        100% {
+          border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%;
+        }
+        34% {
+          border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%;
+        }
+        67% {
+          border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%;
+        }
+      }
+
       /* Utilities used inline in markup preserved in style for minify */
     </style>
   </head>
@@ -531,6 +556,7 @@
         aria-hidden="true"
       ></div>
       <div class="text-center z-20 max-w-4xl px-3">
+        
         <h1
           class="w-full text-5xl md:text-7xl mb-4 gradient-text font-bold md:font-medium tracking-tighter md:tracking-tight"
         >
@@ -558,17 +584,24 @@
       >
         About Me
       </h2>
-      <div class="flex flex-col w-full items-center justify-center">
+
+      <!-- <div class="w-full flex justify-center items-center">
+          <div class="circle w-60 h-60">
+            <img src="images/dinesh_sowndar_flutter_developer.jpg" alt="" />
+          </div>
+        </div> -->
+
+      <div class="flex flex-col w-full items-center justify-center scroll-scale">
         <a href="images/dinesh_sowndar_flutter_developer.jpg" target="_blank">
-          <div class="relative w-96 p-5 scroll-scale">
+          <div class="relative w-96 p-5  ">
             <img
               src="images/dinesh_sowndar_flutter_developer.jpg"
               alt="Dinesh Sowndar"
-              class="w-full h-auto object-cover mask-custom"
+              class="w-full h-auto object-cover circle"
             />
           </div>
         </a>
-        <div class="text-center space-y-2 md:space-y-3 my-3 scroll-fade-in">
+        <div class="text-center space-y-2 md:space-y-3 my-3 ">
           <h3 class="text-3xl text-[#64ffda]">Dinesh Sowndar</h3>
           <p class="text-xl text-[#79c0ff]">
             Flutter App / Frontend (NextJS) Developer
